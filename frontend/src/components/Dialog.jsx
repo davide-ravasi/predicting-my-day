@@ -1,5 +1,6 @@
-import { Dialog as OvernightDialog, DialogContent, DialogHeader, DialogBody, Card } from '@d-edge/overnight-hotelier-react';
+import { Card, Dialog as OvernightDialog, DialogContent, DialogHeader, DialogBody, Icon } from '@d-edge/overnight-hotelier-react';
 import { useState, useEffect } from 'react';
+import CountCard from './CountCard'
 
 export default function Dialog({
     isOpen,
@@ -48,18 +49,27 @@ export default function Dialog({
                     {error && <p>Error: {error}</p>}
                     {!isLoading && !error && data && (
                         <>
-                            <div>
-                                <pre>{JSON.stringify(data, null, 2)}</pre>
+                            <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-start-24  htl-u-margin-inline-48'>
+                                <CountCard title="Check-In" modificator={'success'} >
+                                    <Icon
+                                        name="plus"
+                                        className="htl-u-margin-inline-end-8"
+                                    /> 
+                                    <span>15</span>
+                                </CountCard>
+                                <CountCard title="Check-Out" modificator={'critical'} >
+                                    <Icon
+                                        name="checkbox-indeterminate"
+                                        className="htl-u-margin-inline-end-8"
+                                    /> 
+                                    <span>10</span>
+                                </CountCard>
                             </div>
-                            <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-inline-48'>
+                            <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-start-24 htl-u-margin-inline-48'>
                                 <Card style={{flex: 1}}>
-                                    <h2 className="htl-u-margin-block-end-16 htl-u-align-center">Check-In</h2>
-                                    <p className="htl-u-background-color-success-default">10</p>
+                                <pre>{JSON.stringify(data, null, 2)}</pre>
                                 </Card>
-                                <Card style={{flex: 1}}>
-                                    <h2>Check-Out</h2>
-                                    <p className="htl-u-text-color-critical-strong">15</p>
-                                </Card>
+
                             </div>
                         </>
                     )}

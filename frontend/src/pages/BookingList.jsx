@@ -51,12 +51,12 @@ export default function BookingList({
               </th>
               <th className="" scope="col"></th>
               <th className="" scope="col">Reference</th>
-              <th scope="col" aria-sort="descending" className="htl-table__head--sortable">
-                <button type="button" className="htl-table-sort htl-table-sort--sort-descending">
+              <th scope="col" aria-sort="none" className="htl-table__head--sortable">
+                <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                   Purchased
                   <i
                     aria-hidden="true"
-                    className="fa-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-descending"
+                    className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-descending"
                   ></i>
                 </button>
               </th>
