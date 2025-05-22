@@ -1,7 +1,6 @@
 export const printDocument = (formattedDate, data) => {
   const printWindow = window.open("", "_blank");
   if (printWindow) {
-    // Create print-friendly content
     const printContent = `
             <div>
                 <div style="display: flex; gap: 48px; margin: 24px 48px;">
