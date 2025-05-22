@@ -1,4 +1,4 @@
-import { Card, Dialog as OvernightDialog, DialogContent, DialogHeader, DialogBody, Icon } from '@d-edge/overnight-hotelier-react';
+import { Card, Dialog as OvernightDialog, DialogContent, DialogHeader, DialogBody } from '@d-edge/overnight-hotelier-react';
 import { useState, useEffect } from 'react';
 import CountCard from './CountCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,10 +40,8 @@ export default function Dialog({
                     throw new Error(`Failed to fetch data: ${response.status} ${errorText}`);
                 }
                 const result = await response.json();
-                console.log('Received data:', result);
                 setData(result);
             } catch (err) {
-                console.error('Error details:', err);
                 setError(err.message || 'Failed to fetch data. Please try again later.');
             } finally {
                 setIsLoading(false);
@@ -93,7 +91,7 @@ export default function Dialog({
                                     <FontAwesomeIcon icon={faPersonWalkingDashedLineArrowRight} size="lg" />
                                     <span className='htl-u-margin-inline-start-16 htl-u-typography-highlight-1-default'>{data.CheckIn}</span>
                                 </CountCard>
-                                <CountCard title="Check-Out" modificator={'critical'} >
+                                <CountCard title="Check-Out" modificator={'blue'} >
                                     <FontAwesomeIcon icon={faPersonWalkingLuggage} size="lg" />
                                     <span className='htl-u-margin-inline-start-16 htl-u-typography-highlight-1-default'>{data.CheckOut}</span>
                                 </CountCard>
