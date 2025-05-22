@@ -43,7 +43,7 @@ export default function Dialog({
     return (
         <OvernightDialog open={isOpen} onOpenChange={setOpen}>
             <DialogContent>
-                <DialogHeader closeLabel="Close">My day: {formattedDate}</DialogHeader>
+                <DialogHeader closeLabel="Close">{formattedDate}</DialogHeader>
                 <DialogBody>
                     {isLoading && <p>Loading...</p>}
                     {error && <p>Error: {error}</p>}
@@ -65,9 +65,10 @@ export default function Dialog({
                                     <span>10</span>
                                 </CountCard>
                             </div>
-                            <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-start-24 htl-u-margin-inline-48'>
+                            <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-24 htl-u-margin-inline-48'>
                                 <Card style={{flex: 1}}>
-                                <pre>{JSON.stringify(data, null, 2)}</pre>
+                                    <h2 className="htl-u-margin-block-end-16 htl-u-text-align-center">Details</h2>
+                                    <pre>{JSON.stringify(data, null, 2)}</pre>
                                 </Card>
 
                             </div>
