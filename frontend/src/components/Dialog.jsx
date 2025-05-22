@@ -1,6 +1,9 @@
 import { Card, Dialog as OvernightDialog, DialogContent, DialogHeader, DialogBody, Icon } from '@d-edge/overnight-hotelier-react';
 import { useState, useEffect } from 'react';
 import CountCard from './CountCard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPrint } from '@fortawesome/free-solid-svg-icons';
+import { useRef } from 'react'; 
 
 export default function Dialog({
     isOpen,
@@ -15,6 +18,8 @@ export default function Dialog({
     const formattedDate = today.toLocaleDateString('en-US', options);
 
     const endpoint = 'https://jsonplaceholder.typicode.com/todos/1'; // Replace with your actual endpoint
+
+    const dialogBodyRef = useRef(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -39,12 +44,37 @@ export default function Dialog({
 
         fetchData();
     }, [isOpen]);
+
+    const printDocument = () => {
+        const printWindow = window.open('', '_blank');
+        if (printWindow) {
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Print Document</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; }
+                            pre { white-space: pre-wrap; word-wrap: break-word; }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>${formattedDate}</h1>
+                        <div>${dialogBodyRef.current.innerHTML}</div>
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+    }
     
     return (
         <OvernightDialog open={isOpen} onOpenChange={setOpen}>
             <DialogContent>
-                <DialogHeader closeLabel="Close">{formattedDate}</DialogHeader>
-                <DialogBody>
+                <DialogHeader closeLabel="Close">{formattedDate} 
+                    <button  onClick={printDocument}><FontAwesomeIcon icon={faPrint} /></button>
+                </DialogHeader>
+                <DialogBody ref={dialogBodyRef}>
                     {isLoading && <p>Loading...</p>}
                     {error && <p>Error: {error}</p>}
                     {!isLoading && !error && data && (
