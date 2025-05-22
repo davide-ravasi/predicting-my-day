@@ -17,7 +17,7 @@ export default function Dialog({
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = today.toLocaleDateString('en-US', options);
 
-    const endpoint = 'https://jsonplaceholder.typicode.com/todos/1'; // Replace with your actual endpoint
+    const endpoint = 'https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/';
 
     const dialogBodyRef = useRef(null);
 
@@ -28,15 +28,23 @@ export default function Dialog({
             setIsLoading(true);
             setError(null);
             try {
-                const response = await fetch(endpoint);
+                const response = await fetch(endpoint, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                });
                 if (!response.ok) {
-                    throw new Error('Failed to fetch data');
+                    const errorText = await response.text();
+                    throw new Error(`Failed to fetch data: ${response.status} ${errorText}`);
                 }
                 const result = await response.json();
+                console.log('Received data:', result);
                 setData(result);
             } catch (err) {
-                setError(err.message);
-                console.error('Error fetching data:', err);
+                console.error('Error details:', err);
+                setError(err.message || 'Failed to fetch data. Please try again later.');
             } finally {
                 setIsLoading(false);
             }
@@ -71,8 +79,9 @@ export default function Dialog({
     return (
         <OvernightDialog open={isOpen} onOpenChange={setOpen}>
             <DialogContent>
-                <DialogHeader closeLabel="Close">{formattedDate} 
-                    <button  onClick={printDocument}><FontAwesomeIcon icon={faPrint} /></button>
+                <DialogHeader closeLabel="Close">
+                    {formattedDate} 
+                    <button  className="htl-button htl-button--ghost htl-u-margin-inline-start-12 " onClick={printDocument}><FontAwesomeIcon icon={faPrint} size="lg" /></button>
                 </DialogHeader>
                 <DialogBody ref={dialogBodyRef}>
                     {isLoading && <p>Loading...</p>}
@@ -85,23 +94,21 @@ export default function Dialog({
                                         name="plus"
                                         className="htl-u-margin-inline-end-8"
                                     /> 
-                                    <span>15</span>
+                                    <span>{data.CheckIn}</span>
                                 </CountCard>
                                 <CountCard title="Check-Out" modificator={'critical'} >
                                     <Icon
                                         name="checkbox-indeterminate"
                                         className="htl-u-margin-inline-end-8"
                                     /> 
-                                    <span>10</span>
+                                    <span>{data.CheckOut}</span>
                                 </CountCard>
                             </div>
                             <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-24 htl-u-margin-inline-48'>
                                 <Card style={{flex: 1}}>
                                     <h2 className="htl-u-margin-block-end-16 htl-u-text-align-center">Details</h2>
-                                    <p>Segment, Loyalty member, Hotel Note,Special Request,
-                                    business, leisure par client et avec la durée
+                                    <p>{data.Summary}
                                     </p>
-                                    <pre>{JSON.stringify(data, null, 2)}</pre>
                                 </Card>
                             </div>
                         </>
