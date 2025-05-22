@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 import CountCard from './CountCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonWalkingDashedLineArrowRight, faPersonWalkingLuggage, faPrint } from '@fortawesome/free-solid-svg-icons';
-import { useRef } from 'react'; 
+import { useRef } from 'react';
+import { printDocument } from '../utils/printUtils';
+import { fetchDayData } from '../utils/api';
 
 export default function Dialog({
     isOpen,
@@ -17,29 +19,16 @@ export default function Dialog({
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = today.toLocaleDateString('en-US', options);
 
-    const endpoint = 'https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/';
-
     const dialogBodyRef = useRef(null);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const loadData = async () => {
             if (!isOpen) return;
             
             setIsLoading(true);
             setError(null);
             try {
-                const response = await fetch(endpoint, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json',
-                    },
-                });
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Failed to fetch data: ${response.status} ${errorText}`);
-                }
-                const result = await response.json();
+                const result = await fetchDayData();
                 setData(result);
             } catch (err) {
                 setError(err.message || 'Failed to fetch data. Please try again later.');
@@ -48,38 +37,23 @@ export default function Dialog({
             }
         };
 
-        fetchData();
+        loadData();
     }, [isOpen]);
 
-    const printDocument = () => {
-        const printWindow = window.open('', '_blank');
-        if (printWindow) {
-            printWindow.document.write(`
-                <html>
-                    <head>
-                        <title>Print Document</title>
-                        <style>
-                            body { font-family: Arial, sans-serif; }
-                            pre { white-space: pre-wrap; word-wrap: break-word; }
-                        </style>
-                    </head>
-                    <body>
-                        <h1>${formattedDate}</h1>
-                        <div>${dialogBodyRef.current.innerHTML}</div>
-                    </body>
-                </html>
-            `);
-            printWindow.document.close();
-            printWindow.print();
+    const handlePrint = () => {
+        if (data) {
+            printDocument(formattedDate, data);
         }
-    }
+    };
     
     return (
         <OvernightDialog open={isOpen} onOpenChange={setOpen}>
             <DialogContent>
                 <DialogHeader closeLabel="Close" className="htl-u-flex-row htl-u-justify-content-between htl-u-align-items-center">
                     {formattedDate} 
-                    <button  className="htl-button htl-button--ghost htl-u-margin-inline-start-12" onClick={printDocument}><FontAwesomeIcon icon={faPrint} size="xl" style={{}} /></button>
+                    <button className="htl-button htl-button--ghost htl-u-margin-inline-start-12" onClick={handlePrint}>
+                        <FontAwesomeIcon icon={faPrint} size="xl" />
+                    </button>
                 </DialogHeader>
                 <DialogBody ref={dialogBodyRef}>
                     {isLoading && <p>Loading...</p>}
@@ -99,8 +73,7 @@ export default function Dialog({
                             <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-24 htl-u-margin-inline-48'>
                                 <Card style={{flex: 1}}>
                                     <h2 className="htl-u-margin-block-end-16 htl-u-text-align-center">Details</h2>
-                                    <p>{data.Summary}
-                                    </p>
+                                    <p>{data.Summary}</p>
                                 </Card>
                             </div>
                         </>
