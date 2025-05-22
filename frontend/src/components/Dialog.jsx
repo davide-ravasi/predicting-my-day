@@ -68,9 +68,11 @@ export default function Dialog({
                             <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-24 htl-u-margin-inline-48'>
                                 <Card style={{flex: 1}}>
                                     <h2 className="htl-u-margin-block-end-16 htl-u-text-align-center">Details</h2>
+                                    <p>Segment, Loyalty member, Hotel Note,Special Request,
+                                    business, leisure par client et avec la durée
+                                    </p>
                                     <pre>{JSON.stringify(data, null, 2)}</pre>
                                 </Card>
-
                             </div>
                         </>
                     )}
