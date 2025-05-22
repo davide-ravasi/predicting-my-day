@@ -2,7 +2,7 @@ import { Card, Dialog as OvernightDialog, DialogContent, DialogHeader, DialogBod
 import { useState, useEffect } from 'react';
 import CountCard from './CountCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPrint } from '@fortawesome/free-solid-svg-icons';
+import { faPersonWalkingDashedLineArrowRight, faPersonWalkingLuggage, faPrint } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react'; 
 
 export default function Dialog({
@@ -79,9 +79,9 @@ export default function Dialog({
     return (
         <OvernightDialog open={isOpen} onOpenChange={setOpen}>
             <DialogContent>
-                <DialogHeader closeLabel="Close">
+                <DialogHeader closeLabel="Close" className="htl-u-flex-row htl-u-justify-content-between htl-u-align-items-center">
                     {formattedDate} 
-                    <button  className="htl-button htl-button--ghost htl-u-margin-inline-start-12 " onClick={printDocument}><FontAwesomeIcon icon={faPrint} size="lg" /></button>
+                    <button  className="htl-button htl-button--ghost htl-u-margin-inline-start-12" onClick={printDocument}><FontAwesomeIcon icon={faPrint} size="xl" style={{}} /></button>
                 </DialogHeader>
                 <DialogBody ref={dialogBodyRef}>
                     {isLoading && <p>Loading...</p>}
@@ -90,18 +90,12 @@ export default function Dialog({
                         <>
                             <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-start-24  htl-u-margin-inline-48'>
                                 <CountCard title="Check-In" modificator={'success'} >
-                                    <Icon
-                                        name="plus"
-                                        className="htl-u-margin-inline-end-8"
-                                    /> 
-                                    <span>{data.CheckIn}</span>
+                                    <FontAwesomeIcon icon={faPersonWalkingDashedLineArrowRight} size="lg" />
+                                    <span className='htl-u-margin-inline-start-16 htl-u-typography-highlight-1-default'>{data.CheckIn}</span>
                                 </CountCard>
                                 <CountCard title="Check-Out" modificator={'critical'} >
-                                    <Icon
-                                        name="checkbox-indeterminate"
-                                        className="htl-u-margin-inline-end-8"
-                                    /> 
-                                    <span>{data.CheckOut}</span>
+                                    <FontAwesomeIcon icon={faPersonWalkingLuggage} size="lg" />
+                                    <span className='htl-u-margin-inline-start-16 htl-u-typography-highlight-1-default'>{data.CheckOut}</span>
                                 </CountCard>
                             </div>
                             <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-24 htl-u-margin-inline-48'>
