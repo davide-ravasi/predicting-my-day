@@ -27,3 +27,5 @@ dist-ssr
 /frontend/dist
 /frontend/dist-ssr
 /frontend/*.local
+
+*.env
