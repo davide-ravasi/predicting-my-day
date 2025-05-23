@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonWalkingDashedLineArrowRight, faPersonWalkingLuggage, faPrint } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react';
 import { printDocument } from '../utils/printUtils';
-import { fetchDayData } from '../utils/api';
+import { fetchData } from '../utils/api';
 
 export default function Dialog({
     isOpen,
@@ -28,7 +28,7 @@ export default function Dialog({
             setIsLoading(true);
             setError(null);
             try {
-                const result = await fetchDayData();
+                const result = await fetchData("https://bvsqurrdgswa6wytinw3cbyd4i0jvwip.lambda-url.us-east-1.on.aws/");
                 setData(result);
             } catch (err) {
                 setError(err.message || 'Failed to fetch data. Please try again later.');

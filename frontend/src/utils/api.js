@@ -1,7 +1,4 @@
-const endpoint =
-  "https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/";
-
-export const fetchDayData = async () => {
+export const fetchData = async (endpoint) => {
   const response = await fetch(endpoint, {
     method: "GET",
     headers: {

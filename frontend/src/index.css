@@ -78,3 +78,10 @@
   vertical-align: middle;
   cursor: pointer;
 }
+
+.htl-table-vip {
+  color: #ffd700; /* Bright gold color */
+  filter: drop-shadow(
+    1px 1px 1px rgba(119, 119, 119, 0.7)
+  ); /* Strong black shadow */
+}
