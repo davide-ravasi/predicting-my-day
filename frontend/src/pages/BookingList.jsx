@@ -117,7 +117,7 @@ export default function BookingList({
                     ></i>
                     </button>
                 </th>
-                <th className="" scope="col">Détail du panier</th>
+                <th className="" scope="col">Basket detail</th>
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Origin
@@ -127,7 +127,7 @@ export default function BookingList({
                     ></i>
                     </button>
                 </th>
-                <th className="" scope="col">Tarif</th>
+                <th className="" scope="col">Rate</th>
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Amount
