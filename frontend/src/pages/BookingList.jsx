@@ -150,10 +150,10 @@ export default function BookingList({
                 </tr>
             </thead>
             <tbody>
-                <tr className="htl-u-color-background-success-weaker">
+                <tr>
                 <td className="">
                     <span className="two-line-clamp">
-                    <FontAwesomeIcon icon={faCrown} size="lg" className="htl-table-vip htl-u-margin-inline-end-16" />
+                    {/* <FontAwesomeIcon icon={faCrown} size="lg" className="htl-table-vip htl-u-margin-inline-end-16" /> */}
                     <span className="htl-badge htl-badge--color-blue">Confirmed</span>
                     
                     </span>
