@@ -33,11 +33,13 @@ export const fetchData = async (endpoint) => {
       throw new Error(`Failed to fetch data: ${response.status} ${errorText}`);
     }
 
+    console.log("API Response:", response);
     const data = await response.json();
     // Parse the nested JSON string in the response property
-    const parsedData = JSON.parse(data.response);
-    console.log("Parsed API Response:", parsedData);
-    return parsedData;
+    console.log("Parsed API Response:", data);
+    //const parsedData = JSON.parse(data.response);
+    //console.log("Parsed Data:", parsedData);
+    return data;
   } catch (error) {
     console.error("API Error:", error);
     throw error;

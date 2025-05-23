@@ -28,7 +28,9 @@ export default function Dialog({
             setIsLoading(true);
             setError(null);
             try {
-                const result = await fetchData("https://bvsqurrdgswa6wytinw3cbyd4i0jvwip.lambda-url.us-east-1.on.aws/");
+                // https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/
+                const result = await fetchData("https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/");
+                //const result = await fetchData("https://bvsqurrdgswa6wytinw3cbyd4i0jvwip.lambda-url.us-east-1.on.aws/");
                 setData(result);
             } catch (err) {
                 setError(err.message || 'Failed to fetch data. Please try again later.');
@@ -72,8 +74,61 @@ export default function Dialog({
                             </div>
                             <div className='htl-u-flex-row htl-u-gap-48 htl-u-margin-block-24 htl-u-margin-inline-48'>
                                 <Card style={{flex: 1}}>
-                                    <h2 className="htl-u-margin-block-end-16 htl-u-text-align-center">Details</h2>
-                                    <p>{data.Summary}</p>
+                                    <h2 className="htl-u-margin-block-end-16">Details</h2>
+                                    <div>
+                                        {data.Summary.map((item, index) => {
+                                            const [name, details] = item.split(': ');
+                                            return (
+                                            <div key={index} className="htl-u-margin-block-end-16">
+                                                <h3 className="htl-u-margin-block-end-8 htl-u-typography-body-1-strong">{name}</h3> 
+                                                <p className="htl-u-typography-body-default">{details}</p>
+                                            </div>
+                                        )})}
+                                        {/* {data.Summary && (
+                                            <>
+                                                {data.Summary['Additional Notes']?.Promotions && (
+                                                    <div className="htl-u-margin-block-end-24">
+                                                        <h3 className="htl-u-margin-block-end-8">Promotions</h3>
+                                                        <div className="htl-u-flex-row htl-u-gap-16">
+                                                            {data.Summary['Additional Notes'].Promotions.map((promo, index) => (
+                                                                <div key={index} className="htl-u-flex-1 htl-u-padding-8 htl-u-background-color-neutral-subtle htl-u-border-radius-4">
+                                                                    <p className="htl-u-margin-block-end-4 htl-u-typography-caption-default">{promo}</p>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+
+                                                {data.Summary['Arrival Time Distribution'] && (
+                                                    <div className="htl-u-margin-block-end-24">
+                                                        <h3 className="htl-u-margin-block-end-8">Arrival Time Distribution</h3>
+                                                        <div className="htl-u-flex-row htl-u-gap-16">
+                                                            {Object.entries(data.Summary['Arrival Time Distribution']).map(([time, count]) => (
+                                                                <div key={time} className="htl-u-flex-1 htl-u-padding-8 htl-u-background-color-neutral-subtle htl-u-border-radius-4">
+                                                                    <p className="htl-u-margin-block-end-4 htl-u-typography-caption-default">{time}</p>
+                                                                    <p className="htl-u-typography-highlight-1-strong">{count}</p>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+
+                                                {data.Summary['Additional Notes']?.['Special Booking Details'] && (
+                                                    <div className="htl-u-margin-block-end-24">
+                                                        <h3 className="htl-u-margin-block-end-8">Special Booking Details</h3>
+                                                        <div className="htl-u-padding-8 htl-u-background-color-neutral-subtle htl-u-border-radius-4">
+                                                            {Object.entries(data.Summary['Additional Notes']['Special Booking Details']).map(([key, value]) => (
+                                                                <div key={key} className="htl-u-margin-block-end-8">
+                                                                    <p className="htl-u-typography-body-strong">{key}</p>
+                                                                    <p>{Array.isArray(value) ? value.join(', ') : value}</p>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )} */}
+                                    </div>
                                 </Card>
                             </div>
                         </>
