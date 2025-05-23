@@ -74,10 +74,12 @@ export default function BookingList({
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Status
-                    <i
-                        aria-hidden="true"
-                        className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-none"
-                    ></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
+                        >
+                            <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
                     </button>
                 </th>
                 <th className="" scope="col"></th>
@@ -85,66 +87,80 @@ export default function BookingList({
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Purchased
-                    <i
-                        aria-hidden="true"
-                        className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-descending"
-                    ></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
+                        >
+                            <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
                     </button>
                 </th>
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Check-In
-                    <i
-                        aria-hidden="true"
-                        className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-none"
-                    ></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
+                        >
+                            <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
                     </button>
                 </th>
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Check-Out
-                    <i
-                        aria-hidden="true"
-                        className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-none"
-                    ></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
+                        >
+                            <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
                     </button>
                 </th>
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Customer details
-                    <i
-                        aria-hidden="true"
-                        className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-none"
-                    ></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
+                        >
+                            <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
                     </button>
                 </th>
                 <th className="" scope="col">Basket detail</th>
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Origin
-                    <i
-                        aria-hidden="true"
-                        className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-none"
-                    ></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
+                        >
+                            <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
                     </button>
                 </th>
                 <th className="" scope="col">Rate</th>
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Amount
-                    <i
-                        aria-hidden="true"
-                        className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-none"
-                    ></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
+                        >
+                            <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
                     </button>
                 </th>
                 <th scope="col" aria-sort="none" className="htl-table__head--sortable">
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Guarantee
-                    <i
-                        aria-hidden="true"
-                        className="fa-arrow-up-arrow-down fa-solid htl-icon htl-icon--small htl-table-sort__icon htl-table-sort__icon--sort-none"
-                    ></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
+                        >
+                            <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
                     </button>
                 </th>
                 <th className="" scope="col"></th>
@@ -172,11 +188,13 @@ export default function BookingList({
                     </span>
                 </td>
                 <td className="htl-u-color-text-neutral-default">
-                    <i
-                    aria-hidden="true"
-                    className="fa-memo-circle-info fa-solid htl-icon htl-icon--medium htl-u-color-text-neutral-default"
-                    data-state="closed"
-                    ></i>
+                    <svg 
+                        className="fa-memo-circle-info fa-solid htl-icon htl-u-color-text-neutral-default" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 576 512"
+                        style={{ width: '18px', height: '18px', minWidth: '18px', minHeight: '18px' }}
+                    >
+                    <path d="M0 64C0 28.7 28.7 0 64 0L320 0c35.3 0 64 28.7 64 64l0 134.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7L64 512c-35.3 0-64-28.7-64-64L0 64zm64 80c0 8.8 7.2 16 16 16l224 0c8.8 0 16-7.2 16-16s-7.2-16-16-16L80 128c-8.8 0-16 7.2-16 16zm16 80c-8.8 0-16 7.2-16 16s7.2 16 16 16l160 0c8.8 0 16-7.2 16-16s-7.2-16-16-16L80 224zm0 96c-8.8 0-16 7.2-16 16s7.2 16 16 16l96 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-96 0zm352-96a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm0 96a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm-32 48c0 8.8 7.2 16 16 16c0 0 0 0 0 0l0 48s0 0 0 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l16 0 16 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l0-64c0-8.8-7.2-16-16-16l-16 0c-8.8 0-16 7.2-16 16z"/></svg>
                 </td>
                 <td className="htl-u-typography-body-2-strong">
                     <span className="two-line-clamp">{item.reference}</span>
