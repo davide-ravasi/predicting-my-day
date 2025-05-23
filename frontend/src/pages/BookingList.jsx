@@ -2,8 +2,7 @@ import React from 'react'
 import { Button } from '@d-edge/overnight-hotelier-react';
 import { useEffect } from 'react';
 import { fetchBookingsData } from '../utils/api';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCrown } from '@fortawesome/free-solid-svg-icons';
+import { formatDate } from '../utils/api';
 
 
 export default function BookingList({
@@ -13,23 +12,24 @@ export default function BookingList({
     const [isLoading, setIsLoading] = React.useState(false);
     const [error, setError] = React.useState(null);
 
-    // useEffect(() => {
-    //     const loadData = async () => {
+    useEffect(() => {
+        const loadData = async () => {
             
-    //         setIsLoading(true);
-    //         setError(null);
-    //         try {
-    //             const result = await fetchBookingsData("https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/");
-    //             setData(result);
-    //         } catch (err) {
-    //             setError(err.message || 'Failed to fetch data. Please try again later.');
-    //         } finally {
-    //             setIsLoading(false);
-    //         }
-    //     };
+            setIsLoading(true);
+            setError(null);
+            try {
+                const result = await fetchBookingsData("https://jeuumtt27yzqwwd443ope7dcea0vnrca.lambda-url.us-east-1.on.aws/?date=2025-05-22");
+                setData(result);
+                console.log("API Response:", result);
+            } catch (err) {
+                setError(err.message || 'Failed to fetch data. Please try again later.');
+            } finally {
+                setIsLoading(false);
+            }
+        };
 
-    //     loadData();
-    // }, []);
+        loadData();
+    }, []);
 
   return (
     <div id="booking-list">
@@ -52,20 +52,20 @@ export default function BookingList({
             </a>
         </div>
       </div>
-        {/* {isLoading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>} */}
-        { (
+        {isLoading && <p>Loading...</p>}
+        {error && <p>Error: {error}</p>}
+        { !isLoading && !error && data && (
             <table className="htl-table">
             <caption>
                 <p className="htl-u-typography-body-1-default">
                 Showing {" "}
                 <span className="htl-u-typography-body-1-strong htl-u-color-text-brand-strong">
-                    7 bookings {" "}
+                    {data.length} bookings {" "}
                 </span> 
-                for a total of {" "}
+                {/* for a total of {" "}
                 <span className="htl-u-typography-body-1-strong htl-u-color-text-brand-strong">
                     €3,189,00, NZ$178,00
-                </span>.
+                </span>. */}
                 </p>
             </caption>
             <thead className="htl-table__head">
@@ -150,11 +150,23 @@ export default function BookingList({
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                {data.map((item, index) => (
+                    
+                <tr key={index}>
                 <td className="">
                     <span className="two-line-clamp">
                     {/* <FontAwesomeIcon icon={faCrown} size="lg" className="htl-table-vip htl-u-margin-inline-end-16" /> */}
-                    <span className="htl-badge htl-badge--color-blue">Confirmed</span>
+                    {
+                        item.status === "Cancelled" ? (
+                            <span className="htl-badge htl-badge--color-blue">{item.status}</span>
+                        ) : item.status === "Confirmed" ? (
+                            <span className="htl-badge htl-badge--color-green">{item.status}</span>
+                        ) : item.status === "Pending" ? (
+                            <span className="htl-badge htl-badge--color-yellow">{item.status}</span>
+                        ) : (
+                            <span className="htl-badge htl-badge--color-red">{item.status}</span>
+                        )
+                    }
                     
                     </span>
                 </td>
@@ -166,31 +178,31 @@ export default function BookingList({
                     ></i>
                 </td>
                 <td className="htl-u-typography-body-2-strong">
-                    <span className="two-line-clamp">JH6DK6</span>
+                    <span className="two-line-clamp">{item.reference}</span>
                 </td>
                 <td className="">
                     <span className="two-line-clamp">
-                    <span>Apr 29, 2025, 12:38 PM</span>
+                    <span>{formatDate(item.purchaseDate)}</span>
                     </span>
                 </td>
                 <td className="">
                     <span className="two-line-clamp">
-                    <span className="htl-u-typography-body-2-strong">May 25, 2025</span>
+                    <span className="htl-u-typography-body-2-strong">May 25, 2025 {formatDate(item.checkInDate)}</span>
                     </span>
                 </td>
                 <td className="">
                     <span className="two-line-clamp">
-                    <span className="htl-u-typography-body-2-strong">May 26, 2025</span>
+                    <span className="htl-u-typography-body-2-strong">May 26, 2025 {formatDate(item.checkOutDate)}</span>
                     </span>
                 </td>
                 <td className="">
-                    <span className="two-line-clamp">Mrs TEST Alix</span>
+                    <span className="two-line-clamp">{item.customer}</span>
                 </td>
                 <td className="">
-                    <span className="two-line-clamp">1 Double room - Romantic with balcony</span>
+                    <span className="two-line-clamp">{item.basketDetails}</span>
                 </td>
                 <td className="">
-                    <span className="two-line-clamp">UI Group</span>
+                    <span className="two-line-clamp">{item.origin}</span>
                 </td>
                 <td className="">
                     <span className="two-line-clamp">
@@ -198,15 +210,15 @@ export default function BookingList({
                         className="single-value htl-u-typography-body-2-strong two-line-clamp"
                         data-state="closed"
                     >
-                        RACKPRI
+                        {item.rate}
                     </span>
                     </span>
                 </td>
                 <td className="htl-u-text-align-end">
-                    <span className="two-line-clamp">€100.00</span>
+                    <span className="two-line-clamp">{item.totalPrice}</span>
                 </td>
                 <td className="htl-u-text-align-end">
-                    <span className="two-line-clamp">€42,00</span>
+                    <span className="two-line-clamp">{item.guarantee}</span>
                 </td>
                 <td className="htl-u-text-align-end">
                     <span className="two-line-clamp">
@@ -220,6 +232,7 @@ export default function BookingList({
                     </span>
                 </td>
                 </tr>
+                ))}
             </tbody>
             </table>
         )}

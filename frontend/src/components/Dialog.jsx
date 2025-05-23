@@ -28,9 +28,7 @@ export default function Dialog({
             setIsLoading(true);
             setError(null);
             try {
-                // https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/
                 const result = await fetchData("https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/");
-                //const result = await fetchData("https://bvsqurrdgswa6wytinw3cbyd4i0jvwip.lambda-url.us-east-1.on.aws/");
                 setData(result);
             } catch (err) {
                 setError(err.message || 'Failed to fetch data. Please try again later.');

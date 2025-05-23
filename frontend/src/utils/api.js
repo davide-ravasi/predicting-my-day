@@ -1,6 +1,3 @@
-const endpoint =
-  "https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/";
-
 export const fetchBookingsData = async (endpoint) => {
   const response = await fetch(endpoint, {
     method: "GET",
@@ -44,4 +41,16 @@ export const fetchData = async (endpoint) => {
     console.error("API Error:", error);
     throw error;
   }
+};
+
+export const formatDate = (dateString) => {
+  const today = new Date(dateString);
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const formattedDate = today.toLocaleDateString("en-US", options);
+  return formattedDate;
 };
