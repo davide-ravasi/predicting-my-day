@@ -3,6 +3,7 @@ import { Button } from '@d-edge/overnight-hotelier-react';
 import { useEffect } from 'react';
 import { fetchBookingsData } from '../utils/api';
 import { formatDate } from '../utils/api';
+import Loading from '../components/Loading';
 
 
 export default function BookingList({
@@ -52,7 +53,7 @@ export default function BookingList({
             </a>
         </div>
       </div>
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <Loading />}
         {error && <p>Error: {error}</p>}
         { !isLoading && !error && data && (
             <table className="htl-table">

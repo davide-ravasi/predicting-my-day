@@ -6,6 +6,7 @@ import { faPersonWalkingDashedLineArrowRight, faPersonWalkingLuggage, faPrint } 
 import { useRef } from 'react';
 import { printDocument } from '../utils/printUtils';
 import { fetchData } from '../utils/api';
+import Loading from './Loading';
 
 export default function Dialog({
     isOpen,
@@ -56,7 +57,7 @@ export default function Dialog({
                     </button>
                 </DialogHeader>
                 <DialogBody ref={dialogBodyRef}>
-                    {isLoading && <p>Loading...</p>}
+                    {isLoading && <Loading />}
                     {error && <p>Error: {error}</p>}
                     {!isLoading && !error && data && (
                         <>
