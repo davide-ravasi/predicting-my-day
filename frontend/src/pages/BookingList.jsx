@@ -75,8 +75,6 @@ export default function BookingList({
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Status
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 576 512"
                         style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
                         >
                             <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
@@ -88,8 +86,6 @@ export default function BookingList({
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Purchased
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 576 512"
                         style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
                         >
                             <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
@@ -99,8 +95,6 @@ export default function BookingList({
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Check-In
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 576 512"
                         style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
                         >
                             <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
@@ -110,8 +104,6 @@ export default function BookingList({
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Check-Out
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 576 512"
                         style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
                         >
                             <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
@@ -121,8 +113,6 @@ export default function BookingList({
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Customer details
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 576 512"
                         style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
                         >
                             <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
@@ -133,8 +123,6 @@ export default function BookingList({
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Origin
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 576 512"
                         style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
                         >
                             <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
@@ -145,8 +133,6 @@ export default function BookingList({
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Amount
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 576 512"
                         style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
                         >
                             <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
@@ -156,8 +142,6 @@ export default function BookingList({
                     <button type="button" className="htl-table-sort htl-table-sort--sort-none">
                     Guarantee
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"                         className="fa-memo-circle-info fa-solid htl-icon" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 576 512"
                         style={{ width: '14px', height: '14px', minWidth: '14px', minHeight: '14px' }}
                         >
                             <path d="M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L128 141.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7 41.4 41.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-96-96zm352 333.3c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L448 370.7 448 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96z"/></svg>
