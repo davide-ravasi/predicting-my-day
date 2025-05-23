@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@d-edge/overnight-hotelier-react';
 import { useEffect } from 'react';
-import { fetchData } from '../utils/api';
+import { fetchBookingsData } from '../utils/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCrown } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,23 +13,23 @@ export default function BookingList({
     const [isLoading, setIsLoading] = React.useState(false);
     const [error, setError] = React.useState(null);
 
-    useEffect(() => {
-        const loadData = async () => {
+    // useEffect(() => {
+    //     const loadData = async () => {
             
-            setIsLoading(true);
-            setError(null);
-            try {
-                const result = await fetchData("https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/");
-                setData(result);
-            } catch (err) {
-                setError(err.message || 'Failed to fetch data. Please try again later.');
-            } finally {
-                setIsLoading(false);
-            }
-        };
+    //         setIsLoading(true);
+    //         setError(null);
+    //         try {
+    //             const result = await fetchBookingsData("https://q6da6o3op4dirpctuohcph5gia0ddkxo.lambda-url.us-east-1.on.aws/");
+    //             setData(result);
+    //         } catch (err) {
+    //             setError(err.message || 'Failed to fetch data. Please try again later.');
+    //         } finally {
+    //             setIsLoading(false);
+    //         }
+    //     };
 
-        loadData();
-    }, []);
+    //     loadData();
+    // }, []);
 
   return (
     <div id="booking-list">
@@ -52,9 +52,9 @@ export default function BookingList({
             </a>
         </div>
       </div>
-        {isLoading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {!isLoading && !error && data && (
+        {/* {isLoading && <p>Loading...</p>}
+        {error && <p>Error: {error}</p>} */}
+        { (
             <table className="htl-table">
             <caption>
                 <p className="htl-u-typography-body-1-default">
