@@ -78,10 +78,15 @@ export default function Dialog({
                                     <div>
                                         {data.Summary.map((item, index) => {
                                             const [name, details] = item.split(': ');
+                                            const detailsList = details.split(',').map(detail => detail.trim());
                                             return (
                                             <div key={index} className="htl-u-margin-block-end-16">
                                                 <h3 className="htl-u-margin-block-end-8 htl-u-typography-body-1-strong">{name}</h3> 
-                                                <p className="htl-u-typography-body-default">{details}</p>
+                                                <ul className="htl-u-margin-0 htl-u-padding-inline-start-16">
+                                                    {detailsList.map((detail, detailIndex) => (
+                                                        <li key={detailIndex} className="htl-u-typography-body-default">{detail}</li>
+                                                    ))}
+                                                </ul>
                                             </div>
                                         )})}
                                         {/* {data.Summary && (
